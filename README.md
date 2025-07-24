@@ -13,13 +13,13 @@ This project is a modular Retrieval-Augmented Generation (RAG) system built usin
 The diagram above shows the execution flow of the system:
 
 1. **Retriever**: Fetches relevant documents based on the user query using FAISS and HuggingFace embeddings.
-2. **MemoryRetriever**: Optionally retrieves past conversation history for the user from SQLite.
+2. **MemoryRetriever**: Retrieves past conversation history for the user from SQLite.
 3. **Responder**: Uses the context and history to generate an answer using a language model (e.g., GPT-4 or HuggingFace).
 4. **MemorySaver**: Persists the interaction (query, answer, history) to the database to maintain continuity.
 
 This architecture is orchestrated with **LangGraph**, which enables declarative control flow between agents using a directed graph structure.
 
----
+
 
 ---
 
@@ -65,7 +65,7 @@ ZubaleTechnicalAssessment/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ZubaleTechnicalAssessment.git
+git clone https://github.com/RicardoMolinaCoronel/zubale-technical-assesment.git
 cd ZubaleTechnicalAssessment
 ```
 

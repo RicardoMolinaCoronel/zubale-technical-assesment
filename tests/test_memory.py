@@ -1,8 +1,7 @@
-import pytest
 from graph.product_query_graph import rag_app
 from app.db import get_history_for_user
-import uuid
 
+# This test verifies that conversation history and memory are isolated per user
 def test_memory_is_user_specific(clean_test_2_users):
     user1, user2 = clean_test_2_users
 

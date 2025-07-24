@@ -1,10 +1,8 @@
-# tests/test_retriever.py
-import os
-import pytest
 from agents.retriever_agent import RetrieverAgent
 
 
-
+# This test ensures that the RetrieverAgent indexes documents from the specified folder
+# and successfully retrieves relevant documents based on a user query. This is a example for the product1.txt
 def test_retrieve_documents():
     retriever = RetrieverAgent()
     query = "price of SmartSpeaker X200"

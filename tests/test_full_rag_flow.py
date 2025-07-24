@@ -1,4 +1,3 @@
-import os
 import pytest
 from graph.product_query_graph import rag_app
 from app.db import get_history_for_user
@@ -10,7 +9,7 @@ def initial_state():
         "query": "How long does the SmartSpeaker X200 battery last?",
         "user_id": "test_user_123"
     }
-
+# This test validates the end-to-end RAG flow
 def test_full_rag_flow(initial_state):
     result = rag_app.invoke(initial_state)
 

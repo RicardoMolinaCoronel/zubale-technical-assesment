@@ -1,10 +1,10 @@
 
 from agents.responder_agent import ResponderAgent
-from agents.retriever_agent import RetrieverAgent
 from langchain_core.documents import Document
 from langchain_core.messages import HumanMessage, AIMessage
-import os
 
+# This test checks that the ResponderAgent correctly generates a response
+# by using both the retrieved document context and the user conversation history.
 def test_prompt_uses_context_and_history():
     agent = ResponderAgent()
     docs = [Document(page_content='''Product: SmartSpeaker X200

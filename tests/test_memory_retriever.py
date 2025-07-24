@@ -1,10 +1,9 @@
-import sqlite3
-import pytest
-from app.db import init_db, save_to_history, get_history_for_user
+
+from app.db import save_to_history, get_history_for_user
 from agents.memory_retriever_agent import MemoryRetrieverAgent
 from langchain_core.messages import HumanMessage, AIMessage
 
-
+# This test ensures that conversation history is correctly saved and retrieved from the database for a specific user
 def test_get_history_for_user_returns_correct_pairs(clean_test_user):
     user_id = clean_test_user
     save_to_history(user_id, "What is your name?", "I'm an AI assistant.")
@@ -16,6 +15,7 @@ def test_get_history_for_user_returns_correct_pairs(clean_test_user):
     assert history[0] == ("What is your name?", "I'm an AI assistant.")
     assert history[1] == ("What do you do?", "I assist with product questions.")
 
+# This test verifies that MemoryRetrieverAgent transforms stored conversation history into LangChain messages
 def test_memory_retriever_agent_formats_messages(clean_test_user):
     user_id = clean_test_user
     save_to_history(user_id, "What is your name?", "I'm an AI assistant.")

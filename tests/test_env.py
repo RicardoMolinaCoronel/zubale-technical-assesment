@@ -3,7 +3,8 @@ from agents.retriever_agent import RetrieverAgent
 import os
 from dotenv import load_dotenv
 
-
+# This test verifies that environment variables are correctly loaded and used
+# to configure the RetrieverAgent and ResponderAgent with the expected settings.
 def test_environment_variables():
     load_dotenv()
     os.environ["TOP_K"] = "5"
