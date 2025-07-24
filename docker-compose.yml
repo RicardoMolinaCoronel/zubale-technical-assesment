@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  zubale_app:
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./conversation.db:/app/conversation.db
+    environment:
+      - ENV=dev
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload

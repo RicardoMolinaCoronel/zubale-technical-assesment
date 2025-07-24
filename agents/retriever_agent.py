@@ -3,9 +3,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.documents import Document
 from typing import List
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 
-
+load_dotenv()
 class RetrieverAgent:
     def __init__(self, index_path: str = None):
         model_name = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
@@ -18,11 +19,20 @@ class RetrieverAgent:
             self.index_documents_from_folder("documents")
 
     def index_documents_from_folder(self, folder_path: str):
+        base_dir = Path(__file__).resolve().parent.parent  # sube a raíz del proyecto
+        folder = base_dir / folder_path
+        if not folder.exists() or not folder.is_dir():
+            raise FileNotFoundError(f"Folder not found: {folder_path}")
+
         texts = []
-        for file in Path(folder_path).glob("*.txt"):
+        for file in folder.glob("*.txt"):
             with open(file, "r", encoding="utf-8") as f:
-                texts.append(f.read())
-                print(texts)
+                content = f.read().strip()
+                if content:
+                    texts.append(content)
+        if not texts:
+            raise ValueError(f"No valid .txt files with content found in {folder_path}")
+
         self.vectorstore = FAISS.from_texts(texts, self.embedder)
 
     def retrieve(self, query: str) -> List[Document]:
