@@ -1,0 +1,6 @@
+Product: SmartWatch Nova S3
+Battery Life: Up to 7 days
+Water Resistant: Yes (IP68)
+Price: 199$
+Material: Anodized aluminum with silicone strap
+Connectivity: Bluetooth 5.1, GPS, NFC

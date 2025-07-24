@@ -1,0 +1,6 @@
+Product: AeroTrack Fitness Band
+Battery Life: Up to 10 days
+Water Resistant: Yes (IP68)
+Price: 59$
+Material: Thermoplastic elastomer strap
+Connectivity: Bluetooth LE, Mobile Sync

@@ -1,0 +1,6 @@
+Product: SafeLock Smart Door Lock
+Battery Life: Up to 1 year (4 AA batteries)
+Water Resistant: Yes (IP65)
+Price: 175$
+Material: Zinc alloy with stainless steel core
+Connectivity: Bluetooth, Wi-Fi, Keypad

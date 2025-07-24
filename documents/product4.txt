@@ -1,0 +1,6 @@
+Product: UltraSlim Power Bank 20000
+Battery Life: 3 full charges (20,000mAh)
+Water Resistant: Splash-proof
+Price: 45$
+Material: Brushed aluminum with polycarbonate edges
+Connectivity: USB-A, USB-C, Wireless charging
