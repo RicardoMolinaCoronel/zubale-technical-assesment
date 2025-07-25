@@ -84,7 +84,7 @@ pip install -r requirements.txt
 ### 4. Copy de .env.example file in your own .env file with your parameters
 ```shell
 EMBEDDING_MODEL=all-MiniLM-L6-v2
-LLM_MODEL=gpt-4-turbo
+LLM_MODEL=gpt-4
 TOP_K=1
 OPENAI_API_KEY=your-openai-api-key
 ```
