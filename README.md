@@ -95,8 +95,17 @@ uvicorn main:app --reload --port 8001
 ```
 
 ### 🧪 Running Tests
+You can run the tests one by one inside the tests folder to verify each component individually.
+If you want to run all the tests
+
+Linux/Mac
 ```bash
 PYTHONPATH=. pytest   
+```
+Windows
+```bash
+$env:PYTHONPATH = "."
+pytest
 ```
 
 ### 🐳 Docker

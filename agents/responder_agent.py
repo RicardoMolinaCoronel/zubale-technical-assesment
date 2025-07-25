@@ -10,7 +10,7 @@ load_dotenv()
 class ResponderAgent:
     def __init__(self):
 
-        self.llm = ChatOpenAI(model_name=os.getenv("LLM_MODEL", "gpt-4-turbo"), temperature=0.3, openai_api_key=os.getenv("OPENAI_API_KEY"))
+        self.llm = ChatOpenAI(model_name=os.getenv("LLM_MODEL", "gpt-4"), temperature=0.3, openai_api_key=os.getenv("OPENAI_API_KEY"))
 
         self.prompt = PromptTemplate(
             input_variables=["context", "question", "history"],
