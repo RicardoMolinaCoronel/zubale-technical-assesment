@@ -47,9 +47,10 @@ ZubaleTechnicalAssessment/
 ├── agents/              # RAG agents
 ├── graph/               # LangGraph configuration
 ├── app/                 # General app functionalities and paramaters
-├── documents/           # Products documents
+├── documents/           # Products documents with information about simulated products
 ├── tests/               # Unit tests
 ├── main.py              # FastAPI entrypoint
+├── example_query.py     # Example request to test the app
 ├── conversation.db      # SQLite DB
 ├── Dockerfile           # Docker container config
 ├── requirements.txt     # Dependencies
@@ -90,7 +91,7 @@ OPENAI_API_KEY=your-openai-api-key
 
 ### 5. Running the aplication
 ```shell
-uvicorn main:app --reload
+uvicorn main:app --reload --port 8001  
 ```
 
 ### 🧪 Running Tests
@@ -99,6 +100,7 @@ PYTHONPATH=. pytest
 ```
 
 ### 🐳 Docker
+Or you can simply run the project with docker
 ```bash
 docker build -t zubale-app .
 docker run -p 8001:8001 zubale-app
@@ -133,6 +135,21 @@ Content-Type: application/json
   "history": [...]
 }
 ```
+## Test the example with curl
+
+Windows
+```bash
+curl -X POST http://127.0.0.1:8000/query -H "Content-Type: application/json" -d "{\"user_id\": \"user123\", \"query\": \"What is the price of the SmartSpeaker?\"}"
+```
+
+Mac OS
+```bash
+curl -X POST http://127.0.0.1:8000/query -H "Content-Type: application/json" -d '{"user_id": "user123", "query": "What is the price of the SmartSpeaker?"}'
+```
+## Or with example_query.py
+```bash
+python example_query.py
+```
 
 ## 🛠️ Tech Stack
 
@@ -148,7 +165,25 @@ Content-Type: application/json
 | Docker             | Containerization                 |
 | Pytest             | Testing framework                |
 
+---
 
+
+## ⏱️ Time Spent
+
+| Task                                                                                         | Estimated Time |
+|----------------------------------------------------------------------------------------------|----------------|
+| 🔧 Initial setup and folder structure                                                        | 0.5h           |
+| 📦 Implementation of RAG agents (`Retriever`, `Responder`, `MemoryRetriever`, `MemorySaver`) | 1.5h           |
+| 🧠 FAISS + HuggingFace embeddings integration                                                | 0.5h           |
+| 🧩 LangGraph flow construction and agent connections                                         | 0.5h           |
+| 📝 Prompt engineering and conversational history formatting                                  | 0.5h           |
+| 🗃️ User-specific memory persistence using SQLite                                            | 0.5h           |
+| 🧪 Unit tests                                                                                | 2h             |
+| 🐳 Dockerization                                                                             | 0.25h          |
+
+
+
+---
 ## 👨‍💻 Author
 
 **Ricardo Molina Coronel**  
